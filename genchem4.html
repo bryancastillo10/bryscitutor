@@ -1,0 +1,738 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bryan's SciTutor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style type="text/css">
+		.jumbotron {background-image:url(bluebg.jpg);}
+		.equation{text-align:center;text-style:cambria math	}
+		.container{background-color:none 	min-height:400px;}
+		p {text-align:justify;}
+		h3 {text-align:justify; font-style:italic}
+		.footer{text-align:center; color:yellow;}
+		.caption{text-align:center; border-style:solid;}
+		.example{text-align:justify; font-family:Arial;}
+ .caption {
+  margin: 5px;
+  border: 2 px solid black;
+  border-radius: 5px;
+  width: 200px;
+  padding: 5px;
+  min-width:400px;
+  text-align: justify;
+  }
+	.balance{
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+	.KaKb{
+  border-collapse: collapse;
+  width: 57%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+	.quotient{
+  border-collapse: collapse;
+  width: 70%;
+  margin-left:auto;
+  margin-right:auto;
+}
+	
+th, td {
+  padding: 10px;
+  text-align: justify;
+  border-bottom: 1px solid #ddd;
+}
+   tr:hover {background-color:#f5f5f5;}
+	
+  .periodic {
+	 margin:0px;
+	 padding:0px; 
+}
+
+	.aligncenter{
+		text-align:center;
+	}
+.frac {
+ display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divide {
+ display: -webkit-flex;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+<!--Pang display ng superscripts and subscripts for nuclearchm!-->
+body {
+  font-size: 48px
+}
+
+.nuke {
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-end;
+  height: 1.5em;
+  line-height: 1.3
+}
+
+.nuke > * {
+  font-variant: normal;
+  font-size: .75em;
+  line-height: 1;
+}
+
+.nuke>*:nth-child(3),
+.nuke>*:nth-child(4) {
+  align-self: flex-start
+}
+<!--Pang display ng fractions!-->
+.maineq {
+  display: table-cell;
+  vertical-align: middle;
+}
+.Fraction {
+    display: table-cell;
+    text-align: center;    
+}
+.Denominator{
+    border-top: 1px solid #000;
+    display: block;
+}
+.Fraction, .Numerator, .Denominator {
+    padding: 0px 5px;    
+}
+</style>
+<script>
+
+function myAnswer1() {
+  var x = document.getElementById("mySolution1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+  
+function myAnswer2() {
+  var x = document.getElementById("mySolution2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+  
+function myAnswer3() {
+  var x = document.getElementById("mySolution3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+function myAnswer4() {
+  var x = document.getElementById("mySolution4");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+ function myAnswer5() {
+  var x = document.getElementById("mySolution5");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }} 
+ function myAnswer6() {
+  var x = document.getElementById("mySolution6");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }} 
+  function myAnswer7() {
+  var x = document.getElementById("mySolution7");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+ function myAnswer8() {
+  var x = document.getElementById("mySolution8");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }} 
+  function myAnswer9() {
+  var x = document.getElementById("mySolution9");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+  function myAnswer10() {
+  var x = document.getElementById("mySolution10");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }}
+</script>
+</head>
+<body>
+
+<div class="jumbotron" style="margin-bottom:0">
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">SciTutor</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/biosection.html">Biology Section</a></li>
+        <li class="active"><a href="/chemsection.html">Chemistry Section</a></li>
+		<li><a href="/physection.html">Physics Section</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+<h3><a name="ionproduct">Ion Product of Water</a></h3>
+<p>The property of water to be amphoteric causes its interaction with another water molecule to undergo <strong>auto-ionization</strong>. This effect happens when
+water molecules exchange their protons with one another and it only happens at a very small extent. In this case, one molecule of water act as a Bronsted-Lowry acid (proton donor)
+while the other water molecule is the Bronsted-Lowry base (proton acceptor). To show the process, the chemical equation for it is:</p>
+<p class="equation">H<sub>2</sub>O<sub>(l)</sub> + H<sub>2</sub>O<sub>(l)</sub> &#8652 H<sub>3</sub>O<sup>+</sup><sub>(aq)</sub> + OH<sup>-</sup><sub>(aq)</sub>, or can be simplified to</p>
+<p class="equation">2H<sub>2</sub>O<sub>(l)</sub> &#8652 H<sub>3</sub>O<sup>+</sup><sub>(aq)</sub> + OH<sup>-</sup><sub>(aq)</sub></p>
+<p>With that chemical reaction at equilibrium, the equilibrium constant designated as K<sub>w</sub> with a value of 1.00 x 10<sup>-14</sup> 
+at room temperature (25°C). The equilibrium expression is:</p>
+<p class="equation">K<sub>w</sub>= [H<sub>3</sub>O<sup>+</sup>][OH<sup>-</sup>]= 1.00 x 10<sup>-14</sup></p>
+<p>Solving for the concentrations of hydronium (H<sub>3</sub>O<sup>+</sup>) and hydroxide (OH<sup>-</sup>) ions, we have:</p>
+<p class="equation">1.00 x 10<sup>-14</sup>&nbsp =&nbsp [H<sub>3</sub>O<sup>+</sup>][OH<sup>-</sup>] &nbsp = &nbsp x<sup>2</sup></p>
+<p class="equation">x= &#8730(1.00 x 10<sup>-14</sup>) &nbsp = &nbsp 1.00 x 10<sup>-7</sup> </p>
+<p class="equation">[H<sub>3</sub>O<sup>+</sup>] &nbsp = &nbsp [OH<sup>-</sup>] &nbsp = &nbsp 1.00 x 10<sup>-7</sup> M </p>
+<p>It shows that the dissociated water molecules is very small and it is only applicable at the state of pure water molecule. Changes happen when
+[H<sub>3</sub>O<sup>+</sup>] &gt [OH<sup>-</sup>] by which the solution is acidic while [H<sub>3</sub>O<sup>+</sup>] &lt [OH<sup>-</sup>], the
+solution is basic. If the temperature changes, like other equilibrium constants, the value changes for auto-ionization of water. K<sub>w</sub>
+ranges from 1.15 x 10<sup>-15</sup> at 0°C to 4.99 x 10<sup>-13</sup> at 100°C.</p>
+</div>
+
+<div class="container">
+<div class="col-sm-5">
+<h3><a name="acid">Acid-Base Equilibria</a></h3>
+<p>Acids and bases have their own strength variety that signifies how much they are capable to donate or accept protons. For strong acids and strong bases, they
+are capable of complete ionization and thus their equilibrium constants are relatively large. For weak acids and weak bases, they have their equilibrium constants vary greatly
+depending also on how much proton they can donate or accept. These constants are relatively small in quantity and represented by K<sub>A</sub> is for equilibrium constant for acid while K<sub>B</sub> is equilibrium constant 
+for base. In any acid-base reaction, the equilibrium will favor the reaction that moves the proton to the stronger base. We can illustrate the equilibrium constants
+of acids and bases as follows:</p>
+<p>Hypothetical acid in water equilibrium:</p>
+<p class="equation">HA &nbsp + &nbsp H<sub>2</sub>O &#8652 &nbsp H<sub>3</sub>O<sup>+</sup> &nbsp + &nbsp A<sup>&#8722</sup> </p>
+<div class="frac"><div class="maineq">K<sub>A</sub> = </div><span class="Fraction"><span class="Numerator">[H<sub>3</sub>O<sup>+</sup>][A<sup>&#8722</sup>]</sup></span>
+<span class="Denominator">[HA]</span></span></div>
+<p>Hypothetical base in water equilibrium:</p>
+<p class="equation">A<sup>&#8722</sup> &nbsp + &nbsp H<sub>2</sub>O &#8652 &nbsp HA &nbsp + &nbsp OH<sup>&#8722</sup> </p>
+<div class="frac"><div class="maineq">K<sub>B</sub> = </div><span class="Fraction"><span class="Numerator">[HA][OH<sup>&#8722</sup>]</sup></span>
+<span class="Denominator">[A<sup>&#8722</sup>]</span></span></div>
+<p>The relationship between K<sub>A</sub> and K<sub>B</sub> can be illustrated by multiplying the two expressions:</p>
+<div class="frac"><div class="maineq">K<sub>A</sub>K<sub>B</sub> = </div>(<span class="Fraction"><span class="Numerator">[H<sub>3</sub>O<sup>+</sup>][A<sup>&#8722</sup>]</sup></span>
+<span class="Denominator">[HA]</span></span>)(<span class="Fraction"><span class="Numerator">[HA][OH<sup>&#8722</sup>]</sup></span>
+<span class="Denominator">[A<sup>&#8722</sup>]</span></span>)</div>
+<p class="equation">K<sub>A</sub>K<sub>B</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>-</sup>]</p>
+<p>Remember that: K<sub>W</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>-</sup>], so:</p>
+<p class="equation"><strong>K<sub>A</sub>K<sub>B</sub>= K<sub>W</sub></strong></p>
+<p>This derived equation can be used to correlate K<sub>A</sub> and K<sub>B</sub> such that K<sub>w</sub> is given at 
+certain temperatures and also indicates that they are
+inversely proportional to each other. </p>
+</div>
+<br>
+<div>
+<table class="KaKb">
+	<tr>
+	<th>Weak Acids</th>
+	<th>Chemical Equilibrium</th>
+	<th>K<sub>A</sub></th>
+	<th>pK<sub>A</sub></th>
+	</tr>
+	
+<tr>	
+    <td>Hydrofluoric Acid (HF)</td>
+    <td>HF  + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup> + F<sup>&#8722</sup></td>
+    <td>6.80 x 10<sup>&#8722 4</sup></td>
+	<td>3.2</td>
+
+  </tr>
+  <tr>
+    <td>Acetic Acid (CH<sub>3</sub>COOH)</td>
+    <td>CH<sub>3</sub>COOH + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup>+ CH<sub>3</sub>COO<sup>&#8722</sup></td>
+    <td>1.75 x 10<sup>&#8722 5</sup></td>
+	<td>4.8</td>
+  </tr>
+  
+    </tr>
+  <tr>
+    <td>Formic Acid (HCOOH)</td>
+    <td>HCOOH + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup>+ HCOO<sup>&#8722</sup> </td>
+    <td>1.80 x 10<sup>&#8722 4</sup></td>
+	<td>3.7</td>
+  </tr>
+  
+    <tr>
+    <td style="text-align:left">Hypochlorous Acid (HOCl)</td>
+    <td>HOCl + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup>+ OCl<sup>&#8722</sup></td>
+    <td>3.00 x10<sup>&#8722 8</sup></td>
+	<td>7.5</td>
+  </tr>
+    <tr>
+    <td style="text-align:left">Chloroacetic Acid (ClCH<sub>2</sub>COOH)</td>
+    <td style="text-align:left">ClCH<sub>2</sub>COOH + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup>+ ClCH<sub>2</sub>COO<sup>&#8722</sup></td>
+    <td>1.36 x 10<sup>&#8722 3</sup></td>
+	<td>2.9</td>
+  </tr> 
+  
+   <tr>
+    <td style="text-align:left">Ammonium Ion (NH<sub>4</sub><sup>+</sup>)</td>
+    <td style="text-align:left">NH<sub>4</sub><sup>+</sup> + H<sub>2</sub>O &#8652 H<sub>3</sub>O<sup>+</sup>+ NH<sub>3</sub></td>
+    <td>5.70x10<sup>&#8722 10</sup></td>
+	<td>9.2</td>
+  </tr> 
+	</table><br>
+<p>K<sub>A</sub> and pK<sub>A</sub> values of some weak acids at 25°C. The greater the value of K<sub>A</sub> indicates
+a stronger acid while pK<sub>A</sub> is smaller in value. Thus, K<sub>A</sub> and pK<sub>A</sub> are inversely proportional. <em>(Values were 
+taken from Skoog, 2014)</em></p><br>
+<table class="KaKb">
+	<tr>
+	<th>Weak Bases</th>
+	<th>Chemical Equilibrium</th>
+	<th>K<sub>B</sub></th>
+	<th>pK<sub>B</sub></th>
+	</tr>
+	
+<tr>	
+    <td>Aniline (C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>)</td>
+    <td>C<sub>6</sub>H<sub>5</sub>NH<sub>2</sub>  + H<sub>2</sub>O &#8652 C<sub>6</sub>H<sub>5</sub>NH<sub>3</sub><sup>+</sup> + OH<sup>&#8722</sup></td>
+    <td>4.3x10<sup>&#8722 10</sup></td>
+	<td>9.4</td>
+
+  </tr>
+  <tr>
+    <td>Hydrazine (NH<sub>2</sub>NH<sub>2</sub>)</td>
+    <td>NH<sub>2</sub>NH<sub>2</sub> + H<sub>2</sub>O &#8652 NH<sub>2</sub>NH<sub>3</sub><sup>+</sup> + OH<sup>&#8722</sup></td>
+    <td>1.70x 10<sup>&#8722 6</sup></td>
+	<td>5.8</td>
+  </tr>
+  
+    </tr>
+  <tr>
+    <td>Methylamine (CH<sub>3</sub>NH<sub>2</sub>)</td>
+    <td>CH<sub>3</sub>NH<sub>2</sub> + H<sub>2</sub>O &#8652 CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>+ OH<sup>&#8722</sup> </td>
+    <td>4.38 x 10<sup>&#8722 4</sup></td>
+	<td>3.4</td>
+  </tr>
+  
+    <tr>
+    <td style="text-align:left">Hydroxylamine (NH<sub>2</sub>OH)</td>
+    <td>NH<sub>2</sub>OH + H<sub>2</sub>O &#8652 NH<sub>3</sub>OH<sup>+</sup>+ OH<sup>&#8722</sup></td>
+    <td>1.10 x 10 <sup>&#8722 8</sup></td>
+	<td>8.0</td>
+  </tr>
+    <tr>
+    <td style="text-align:left">Acetate Ion(CH<sub>3</sub>COO<sup>&#8722</sup>)</td>
+    <td style="text-align:left">CH<sub>3</sub>COO<sup>&#8722</sup> + H<sub>2</sub>O &#8652 CH<sub>3</sub>COOH + OH<sup>&#8722</sup></td>
+    <td>5.70 x 10<sup>&#8722 10</sup></td>
+	<td>9.2</td>
+  </tr> 
+      <tr>
+    <td style="text-align:left">Ammonia(NH<sub>3</sub>)</td>
+    <td style="text-align:left">NH<sub>3</sub> + H<sub>2</sub>O &#8652 NH<sub>4</sub><sup>+</sup>+ OH<sup>&#8722</sup></td>
+    <td>1.75 x 10<sup>&#8722 5</sup></td>
+	<td>4.8</td>
+  </tr> 
+	</table>
+	<p>K<sub>B</sub> and pK<sub>B</sub> values of some weak bases 25°C. The greater the value of K<sub>B</sub> indicates
+a weaker base while pK<sub>B</sub> is smaller in value. Thus, K<sub>B</sub> and pK<sub>B</sub> are inversely proportional. <em>(Values were 
+taken from using relationships between their K<sub>A</sub> and K<sub>B</sub> at 25°C)</em></p>
+</div>
+</div>
+<div class="container">
+<h4>Diprotic and Polyprotic Acids and Bases</h4>
+<p>There are acids that can give more than one proton upon their ionization. Thus, they have two or more equilibrium expressions and constants to illustrate their
+acidity. It is always the first proton than any of the successive proton easier to be removed and donate to the base. For example, we have carbonic acid (H<sub>2</sub>CO<sub>3</sub>) at 25°C
+which is a diprotic acid.</p>
+<p>First proton dissociation:</p>
+<p class="equation">H<sub>2</sub>CO<sub>3</sub> + H<sub>2</sub>O &#8652 HCO<sub>3</sub><sup>&#8722</sup> + H<sub>3</sub>O<sup>+</sup></p> 
+<div class="frac"><div class="maineq">K<sub>A1</sub> = </div><span class="Fraction"><span class="Numerator">[H<sub>3</sub>O<sup>+</sup>][HCO<sub>3</sub><sup>&#8722</sup>]</span>
+<span class="Denominator">[H<sub>2</sub>CO<sub>3</sub>]</span></span>= 4.45 x 10<sup>&#8722 7</sup></div>
+
+<p>Second proton dissociation:</p>
+<p class="equation">H<sub></sub>CO<sub>3</sub><sup>&#8722</sup> + H<sub>2</sub>O &#8652 CO<sub>3</sub><sup>2&#8722</sup> + H<sub>3</sub>O<sup>+</sup></p> 
+<div class="frac"><div class="maineq">K<sub>A2</sub> = </div><span class="Fraction"><span class="Numerator">[H<sub>3</sub>O<sup>+</sup>][CO<sub>3</sub><sup>2&#8722</sup>]</span>
+<span class="Denominator">[HCO<sub>3</sub><sup>&#8722</sup>]</span></span>= 4.69 x 10<sup>&#8722 11</sup><br>
+
+</div>
+
+<br>
+<p>It shows that the value of K<sub>A</sub> successively becomes smaller in value as protons get donated. It is become less favorable for the acid to donate the proton
+as it approaches its form with negative ion. The trend of their values should be K<sub>A1</sub> &gt K<sub>A2</sub> &gt and so on. This step by step donation of proton indicates that the acid molecule becomes less acid when protons are lost. 
+On the other hand, polyprotic bases has the same trend and principle of designating K<sub>B</sub> values such that bases is for accepting protons. For example, the carbonate ion (CO<sub>3</sub><sup>2&#8722</sup>) at 25°C is illustrated:</p>
+<p>First proton acceptance:</p>
+<p class="equation">CO<sub>3</sub><sup>2&#8722</sup> + H<sub>2</sub>O &#8652 HCO<sub>3</sub><sup>&#8722</sup> + OH<sup>&#8722</sup></p> 
+<div class="frac"><div class="maineq">K<sub>B1</sub> = </div><span class="Fraction"><span class="Numerator">[OH<sup>&#8722</sup>][HCO<sub>3</sub><sup>&#8722</sup>]</span>
+<span class="Denominator">[CO<sub>3</sub><sup>2&#8722</sup>]</span></span>= 2.13 x 10<sup>&#8722 4</sup></div>
+<p>Second proton acceptance:</p>
+<p class="equation">HCO<sub>3</sub><sup>&#8722</sup> + H<sub>2</sub>O &#8652 H<sub>2</sub>CO<sub>3</sub> + OH<sup>&#8722</sup></p> 
+<div class="frac"><div class="maineq">K<sub>B2</sub> = </div><span class="Fraction"><span class="Numerator">[OH<sup>&#8722</sup>][H<sub>2</sub>CO<sub>3</sub>]</span>
+<span class="Denominator">[HCO<sub>3</sub><sup>&#8722</sup>]</span></span>= 2.25 x 10<sup>&#8722 8</sup></div><br>
+
+<h3>Other Topics in General Chemistry</h3>
+<p>There are other topics in general chemistry that are not discussed in this section but to be further discussed on the following sections:</p>
+<div class="col-sm-3"><button onclick="window.location.href='inorg.html';" >Inorganic Chemistry Section</button>
+<li>Periodic Trends</li>
+<li>Quantum Numbers</li>
+<li>Electronic Configurations</li>
+<li>Bonding Theories</li>
+<li>Electronic and Molecular Geometries</li>
+<li>Liquid State and Forces of Attraction</li>
+<li>Solid State Chemistry</li>
+</div>
+
+<div class="col-sm-3"><button onclick="window.location.href='anachm.html';">Analytical Chemistry Section</button>
+<li>Mass Balance of Chemical Equilibria</li>
+<li>Titration (Neutralization Reaction)</li>
+
+</div>
+
+<div class="col-sm-3"><button onclick="window.location.href='phychm.html';">Physical Chemistry Section</button>
+<li>Ideal Gases</li>
+<li>Thermochemistry</li>
+<li>Ions and Solutions</li>
+<li>Phase Diagram</li>
+<li>Chemical Kinetics</li>
+<li>Nuclear Chemistry</li>
+
+</div>
+</div><br><br>
+<div class="container">
+<h3><a name="solving">General Chemistry Problem Solving</a></h3>
+<p>Practice your skills by answering the following problems (answers and solutions can be viewed).</p>
+<ol>
+<li>Complete the table below for the following elements or ions. (Topic: Notation on Elements)
+
+
+<table class="balance">
+<tr>
+<th>Element or Ion</th>
+<th>Number of Protons</th>
+<th>Number of Neutrons</th>
+<th>Number of Electrons</th>
+</tr>
+<tr>
+<td><span class="nuke"><sup>15</sup><sub>7</sub>N</span></td>
+<td style="text-align:center">7</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+
+<tr>
+<td><span class="nuke"><sup>32</sup><sub>16</sub>S<sup>2&#8722 </sup> </span></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">16</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">10</td>
+</tr>
+
+<tr>
+<td><span class="nuke"><sup>80</sup><sub>35</sub>Br<sup>&#8722 </sup></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">20</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">20</td>
+</tr>
+</table>
+
+</li><br>
+
+<button onclick="myAnswer1()"> View Answers (Complete Table)</button><br><br>
+<div id="mySolution1" hidden>
+<table class="balance">         <!--Answer in Question 1 !-->
+<tr>
+<th>Element or Ion</th>
+<th>Number of Protons</th>
+<th>Number of Neutrons</th>
+<th>Number of Electrons</th>
+</tr>
+<tr>
+<td><span class="nuke"><sup>15</sup><sub>7</sub>N</span></td>
+<td style="text-align:center">7</td>
+<td style="text-align:center; color:blue"><strong>8</strong></td>
+<td style="text-align:center; color:blue"><strong>7</strong></td>
+</tr>
+
+<tr>
+<td><span class="nuke"><sup>32</sup><sub>16</sub>S<sup>2&#8722 </sup> </span></td>
+<td style="text-align:center; color:blue"><strong>16</strong></td>
+<td style="text-align:center">16</td>
+<td style="text-align:center; color:blue"><strong>18</strong></td>
+</tr>
+
+<tr>
+<td style="color:blue"><strong><span class="nuke"><sup>29</sup><sub>14</sub>Si<sup>+4</sup> </span></strong></td>
+<td style="text-align:center">14</td>
+<td style="text-align:center">15</td>
+<td style="text-align:center">10</td>
+</tr>
+
+<tr>
+<td><span class="nuke"><sup>80</sup><sub>35</sub>Br<sup>&#8722 </sup></td>
+<td style="text-align:center; color:blue"><strong>35</strong></td>
+<td style="text-align:center; color:blue"><strong>45</strong></td>
+<td style="text-align:center; color:blue"><strong>36</strong></td>
+</tr>
+<tr>
+<td style="color:blue"><strong><span class="nuke"><sup>40</sup><sub>20</sub>Ca </span></strong></td>
+<td style="text-align:center">20</td>
+<td style="text-align:center; color:blue"><strong>20</strong></td>
+<td style="text-align:center">20</td>
+</tr>
+</table><br><br>
+
+</div>
+<li>Zinc has two naturally occuring isotopes which are Zn<sup>65</sup> (64.9292 amu) and Zn<sup>67</sup> (66.9271 amu).
+If zinc has an average atomic mass of 65.38 amu, what are the percentage abundances of each given isotope? (Topic: Average Atomic Mass)</li>
+<button onclick="myAnswer2()"> View Solution and Answer</button><br>
+<!--Answer No. 2 !-->
+<div id="mySolution2" hidden>
+<p>To solve for the percentage abundance, remember that the overall composition of the atomic mass is 100%. Thus, you can designate the first percentage
+abundance as x while the second as 1 &#8722 x to follow 100%. The solution for this problem is:</p>
+<p class="equation">&sum; (%Abundance)(Isotopic Mass) = (x)(64.9292 amu) + (1 &#8722 x)(66.9271 amu) = 65.38 amu</p>
+<p>Solving for x,  x = 0.7744  and then  1 &#8722 x = 1 &#8722 0.7744 = 0.2256</p>
+<p>Therefore, the isotopes have <span style="color:blue"><strong>77.44% Zn<sup>65</sup></strong></span> and <span style="color:blue"><strong>22.56% Zn<sup>67</sup></strong></span></p>
+</div><br>
+<li>Caustic soda, NaOH, can be prepared commercially by the reaction of Na<sub>2</sub>CO<sub>3</sub> with slaked lime, Ca(OH)<sub>2</sub>.
+How many molecules of NaOH can be obtained by treating 1.350 kg of Na<sub>2</sub>CO<sub>3</sub> with Ca(OH)<sub>2</sub>? (Topic: Avogadro's Number)</li>
+<p class="equation">Na<sub>2</sub>CO<sub>3</sub> &nbsp + &nbsp Ca(OH)<sub>2</sub> &#8594 CaCO<sub>3</sub> &nbsp + &nbsp 2NaOH</p>
+<button onclick="myAnswer3()"> View Solution and Answer</button><br>
+<!--Answer No. 3 !-->
+<div id="mySolution3" hidden>
+<p>To solve for the molecules of NaOH, use the principle of reaction stoichiometry to achieve moles of NaOH and then use Avogadro's number to
+obtain the molecules. Initially, convert the given kilograms to grams (note that 1 kg = 1000 grams):</p>
+<p>The given is 1.350 kg Na<sub>2</sub>CO<sub>3</sub> = 1350 g Na<sub>2</sub>CO<sub>3</sub>,</p>
+
+<div class="frac"><div class="maineq"> molecules of NaOH = (1350 g Na<sub>2</sub>CO<sub>3</sub>)</div>(<span class="Fraction"><span class="Numerator">1 mole Na<sub>2</sub>CO<sub>3</sub></span>
+<span class="Denominator">106 grams Na<sub>2</sub>CO<sub>3</sub></span></span>)(<span class="Fraction"><span class="Numerator">2 moles NaOH</span>
+<span class="Denominator">1 mole Na<sub>2</sub>CO<sub>3</sub></span></span>)(<span class="Fraction"><span class="Numerator">6.022 x 10<sup>23</sup> molecules NaOH</span>
+<span class="Denominator">1 mole NaOH</span></span>) </div>
+<p class="equation">=<strong><span style="color:blue">1.53 x 10<sup>25</sup> molecules NaOH</span></strong></p>
+
+</div><br>
+<li>For the reaction of Ba(OH)<sub>2</sub> + 2HClO<sub>3</sub> &#8594 Ba(ClO<sub>3</sub>)<sub>2</sub> &nbsp + &nbsp 2H<sub>2</sub>O,
+what is the number of moles of H<sub>2</sub>O formed when 0.200 moles of Ba(OH)<sub>2</sub> is treated with 0.500 moles of HClO<sub>3</sub>?
+(Topic: Reaction Stoichiometry and Limiting Reactants)</li>
+<button onclick="myAnswer4()"> View Solution and Answer</button><br><br>
+<!--Answer No. 4 !-->
+<div id="mySolution4" hidden>
+<p>The solution to find the moles of H<sub>2</sub>O is to determine first which of the following starting materials (Ba(OH)<sub>2</sub> and HClO<sub>3</sub>)
+is the limiting reactant. You can simply convert each into the moles of H<sub>2</sub>O:</p>
+<div class="frac"><div class="maineq"> moles of H<sub>2</sub>O from Ba(OH)<sub>2</sub>= ( 0.200 moles Ba(OH)<sub>2</sub>)</div>(<span class="Fraction"><span class="Numerator">2 moles H<sub>2</sub>O</span>
+<span class="Denominator">1 mole Ba(OH)<sub>2</sub></span></span>) = 0.400 moles </div>
+<div class="frac"><div class="maineq"> moles of H<sub>2</sub>O from HClO<sub>3</sub> = ( 0.500 moles HClO<sub>3</sub>)</div>(<span class="Fraction"><span class="Numerator">2 moles H<sub>2</sub>O</span>
+<span class="Denominator">2 moles HClO<sub>3</sub></span></span>) = 0.500 moles  </div>
+<p>From the calculation, it shows that Ba(OH)<sub>2</sub> is the limiting reactant and the moles of H<sub>2</sub>O is <span style="color:blue"><strong>0.400 moles</strong></span>.</p>
+</div>
+<li>A mixture of 1 kg of CS<sub>2</sub> and 2 kg of Cl<sub>2</sub> is passed through a hot reaction tube where the following reaction to place:</li>
+<p class="equation">CS<sub>2</sub> + 3Cl<sub>2</sub> &#8594 CCl<sub>4</sub> + S<sub>2</sub>Cl<sub>2</sub></p>
+<p>How many grams of CCl<sub>4</sub> are produced from the reaction? (Topic: Reaction Stoichiometry and Limiting Reactants)</p>
+<button onclick="myAnswer5()"> View Solution and Answer</button><br>
+<!--Answer No. 5 !-->
+<div id="mySolution5" hidden>
+<p>Same steps of solving as of question number 4 but this time, it starts with grams of the reactants:</p>
+<div class="frac"><div class="maineq"> moles of CCl<sub>4</sub> from CS<sub>2</sub>= ( 1000 grams CS<sub>2</sub>)</div>(<span class="Fraction"><span class="Numerator">1 mole CS<sub>2</sub></span>
+<span class="Denominator">76 grams CS<sub>2</sub></span></span>) (<span class="Fraction"><span class="Numerator">1 mol CCl<sub>4</sub></span>
+<span class="Denominator">1 mol CS<sub>2</sub></span></span>)= 13.16 moles </div>
+
+<div class="frac"><div class="maineq"> moles of CCl<sub>4</sub> from Cl<sub>2</sub>= ( 2000 grams Cl<sub>2</sub>)</div>(<span class="Fraction"><span class="Numerator">1 mole Cl<sub>2</sub></span>
+<span class="Denominator">70.9 grams Cl<sub>2</sub></span></span>) (<span class="Fraction"><span class="Numerator">1 mol CCl<sub>4</sub></span>
+<span class="Denominator">3 moles Cl<sub>2</sub></span></span>)= 9.40 moles </div>
+<p>From the calculation, it shows that Cl<sub>2</sub> is the limiting reactant and the mass of CCl<sub>4</sub> is:</p>
+<div class="frac"><div class="maineq"> grams of CCl<sub>4</sub>= ( 9.40 moles CCl<sub>4</sub>)</div>(<span class="Fraction"><span class="Numerator">153.8 grams CCl<sub>4</sub></span>
+<span class="Denominator">1 mole CCl<sub>4</sub></span></span>) (<span class="Fraction"><span class="Numerator">1 kg CCl<sub>4</sub></span>
+<span class="Denominator">1000 grams CCl<sub>4</sub></span></span>)= &nbsp <span style="color:blue"><strong>1.45 grams CCl<sub>4</sub></strong></span></div><br>
+</div><br>
+<li>What mass of FeCl<sub>3</sub> would contain the same total number of ions as of 16.8 grams of Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>?
+(Topic: Avogadro's Number)</li>
+<!--Answer No. 6 !-->
+<button onclick="myAnswer6()"> View Solution and Answer</button><br>
+<div id="mySolution6" hidden>
+<p>To solve this type of problem, convert the grams of Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> to ions by Avogadro's number and then use the value obtained
+to convert it into grams of FeCl<sub>3</sub>. The stoichiometry should be:</p>
+<div class="frac"><div class="maineq"> ions of Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> = ( 16.8 grams Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>)</div>(<span class="Fraction"><span class="Numerator">1 mole Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span>
+<span class="Denominator">342 grams Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span></span>) (<span class="Fraction"><span class="Numerator">6.022 x 10<sup>23</sup> ions</span>
+<span class="Denominator">1 mole Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub></span></span>)= 2.958 x 10<sup>22</sup>&nbsp ions Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> </div>
+
+<p>Since ions of Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> = ions of FeCl<sub>3</sub> in this problem, we solve:</p>
+<div class="frac"><div class="maineq"> grams of FeCl<sub>3</sub> = (  2.958 x 10<sup>22</sup> ions)</div>(<span class="Fraction"><span class="Numerator">1 mole FeCl<sub>3</sub></span>
+<span class="Denominator">6.022 x 10<sup>23</sup> ions)<sub>3</sub></span></span>) (<span class="Fraction"><span class="Numerator">162.2 FeCl<sub>3</sub></span>
+<span class="Denominator">1 mole FeCl<sub>3</sub></span></span>)= &nbsp <span style="color:blue"><strong>7.97 grams FeCl<sub>3</sub></strong></span></div>
+</div><br>
+<li>What is the empirical formula of a hydrocarbon if complete combustion of 3.700 mg of the hydrocarbon produced 12.507 mg of CO<sub>2</sub>
+and 2.560 mg of H<sub>2</sub>O? What is the molecular formula of the compound or hydrocarbon if its molar mass was found to be at 40 g/mol?
+(Topic: Combustion Analysis)</li>
+<button onclick="myAnswer7()"> View Solution and Answer</button><br>
+<!--Answer No. 7!-->
+<div id="mySolution7" hidden>
+<p>Solving for the empirical formula requires the determination of the moles of carbon and oxygen element from carbon dioxide and water product respectively:</p>
+<div class="frac"><div class="maineq"> moles of C = ( 12.507 mg CO<sub>2</sub>)</div>(<span class="Fraction"><span class="Numerator">1 gram CO<sub>2</sub></span>
+<span class="Denominator">1000 mg CO<sub>2</sub></span></span>) (<span class="Fraction"><span class="Numerator">1 mole CO<sub>2</sub></span>
+<span class="Denominator">44 grams CO<sub>2</sub></span></span>) (<span class="Fraction"><span class="Numerator">1 mole C</span>
+<span class="Denominator">1 mole CO<sub>2</sub></span></span>)= 2.84 x 10<sup>&#8722 4</sup> &nbsp moles of C </div>
+<div class="frac"><div class="maineq"> moles of H = ( 2.560 mg H<sub>2</sub>O)</div>(<span class="Fraction"><span class="Numerator">1 gram H<sub>2</sub>O</span>
+<span class="Denominator">1000 mg H<sub>2</sub>O</span></span>) (<span class="Fraction"><span class="Numerator">1 mole H<sub>2</sub>O</span>
+<span class="Denominator">18 grams H<sub>2</sub>O</span></span>) (<span class="Fraction"><span class="Numerator">2 moles H<sub>2</sub></span>
+<span class="Denominator">1 mole H<sub>2</sub>O</span></span>)= 2.84 x 10<sup>&#8722 4</sup> &nbsp moles of H<sub>2</sub></div>
+<p>Taking the ratio of C and H<sub>2</sub>:</p>
+<div class="frac"><span class="Fraction"><span class="Numerator">2.84 x 10<sup>&#8722 4</sup> &nbsp moles C</span>
+<span class="Denominator">2.84 x 10<sup>&#8722 4</sup> &nbsp moles of H<sub>2</span></span> &nbsp = &nbsp <span class="Fraction"><span class="Numerator">1 C</span>
+<span class="Denominator">1 H<sub>2</sub></span></span></div>
+<p>Thus, the mole ratio is 1:1 and the empircial formula is <span style="color:blue"><strong>CH</strong></span></p>
+<p>Next is solving for the molecular formula by getting the factor to multiply with the subscripts of empirical formula:</p>
+<div class="frac"><div class="maineq"> n =</div><span class="Fraction"><span class="Numerator">Molecular Mass (MM)</span>
+<span class="Denominator">Empirical Mass (EM)</span></span>= <span class="Fraction"><span class="Numerator">40 g/mol</span>
+<span class="Denominator">13 g/mol</span></span>= 3.07 &#8776 3</div><br>
+<p>Multiplying three to the subscripts of empirical formula CH, we have  <span style="color:blue"><strong>C<sub>3</sub>H<sub>3</sub></strong></span></p>
+<br>
+</div>
+	<br>
+<li>Salicylic acid (C<sub>7</sub>H<sub>6</sub>O<sub>3</sub>) reacts with acetic anhydride (C<sub>4</sub>H<sub>6</sub>O<sub>3</sub>) to form aspirin or acetylsalicylic acid
+(C<sub>9</sub>H<sub>8</sub>O<sub>4</sub>). If the percent yeild in this reaction is 78.5%,
+what is the mass of salicylic acid that is required to produce 150 grams of aspirin? (Topic: Reaction Stoichiometry and Percentage Yield)</li>
+<p class="equation">2C<sub>7</sub>H<sub>6</sub>O<sub>3</sub> + C<sub>4</sub>H<sub>6</sub>O<sub>3</sub> &#8594 2C<sub>9</sub>H<sub>8</sub>O<sub>4</sub> + H<sub>2</sub>O</p>
+<button onclick="myAnswer8()"> View Solution and Answer</button><br>
+<!--Answer No. 8 !-->
+<div id="mySolution8" hidden>
+<p>To solve for the mass of salicylic acid, you need to obtain the theoretical yield of aspirin (C<sub>9</sub>H<sub>8</sub>O<sub>4</sub>):</p>
+<div class="frac"><div class="maineq"> % Yield = </div>(<span class="Fraction"><span class="Numerator">Actual Yield</span>
+<span class="Denominator">Theoretical Yield</span></span>) &nbsp x 100%</div>
+<div class="frac"><div class="maineq"> 78.5% = </div>(<span class="Fraction"><span class="Numerator">150 grams C<sub>9</sub>H<sub>8</sub>O<sub>4</sub></span>
+<span class="Denominator">Theoretical Yield</span></span>) &nbsp x 100%</div>
+<p class="equation">Theoretical Yield = &nbsp 191 grams C<sub>9</sub>H<sub>8</sub>O<sub>4</sub></p>
+<p>For the mass of salicylic acid:</p>
+<div class="frac"><div class="maineq"> grams of C<sub>7</sub>H<sub>6</sub>O<sub>3</sub> = (191 grams C<sub>9</sub>H<sub>8</sub>O<sub>4</sub>)</div>(<span class="Fraction"><span class="Numerator">1 mole C<sub>9</sub>H<sub>8</sub>O<sub>4</sub></span>
+<span class="Denominator">180 grams C<sub>9</sub>H<sub>8</sub>O<sub>4</sub></span></span>)(<span class="Fraction"><span class="Numerator">2 moles C<sub>7</sub>H<sub>6</sub>O<sub>3</sub></span>
+<span class="Denominator">2 moles C<sub>9</sub>H<sub>8</sub>O<sub>4</sub></span></span>)(<span class="Fraction"><span class="Numerator">138 grams C<sub>7</sub>H<sub>6</sub>O<sub>3</sub></span>
+<span class="Denominator">1 mole C<sub>7</sub>H<sub>6</sub>O<sub>3</sub></span></span>) = <span style="color:blue"><strong> 146 grams C<sub>7</sub>H<sub>6</sub>O<sub>3</sub></strong></span></div>
+</div><br>
+<li>Phosgene, COCl<sub>2</sub>, is a poisonous gas, decomposes according to the equation: COCl<sub>2(g)</sub> &#8652 
+CO<sub>(g)</sub> + Cl<sub>2(g)</sub>. What is K<sub>p</sub> for the reaction if K<sub>c</sub> = 0.083 at 900°C? (Topic: Chemical Equilibria)</li>
+<button onclick="myAnswer9()"> View Solution and Answer</button><br>
+<!--Answer No. 9 !-->
+<div id="mySolution9" hidden>
+<p>Following the formula of converting K<sub>p</sub> to K<sub>c</sub>:</p>
+<p class="equation">K<sub>p</sub>=K<sub>c</sub>(RT)<sup>&#916n</sup></p>
+<p class="equation">K<sub>p</sub>=(0.083)[(0.0821 L &middot atm/ mol &middot K)(1173.15 K)]<sup>2 &#8722 1</sup></p>
+<p class="equation">K<sub>p</sub>= &nbsp <span style="color:blue"><strong>7.99</strong></span></p>
+</div><br>
+<li>What is the [OCl<sup>&#8722</sup>] in 0.10 M hypochlorous acid, HOCl? K<sub>A</sub> for hypochlorous acid = 3.5 x 10<sup>&#8722 8</sup>. (Topic: Acid-Base Equilibria)</sup></li>
+<button onclick="myAnswer10()"> View Solution and Answer</button><br>
+<!--Answer No. 10 !-->
+<div id="mySolution10" hidden>
+<p>To solve for [OCl<sup>&#8722</sup>], determine the equilibrium expression of dissociation of HOCl by ICE table:</p>
+<table class="balance">
+	<tr>
+	<th>Chemical Equation:</th>
+	<th>HOCl</th>
+	<th>&#8652 &nbsp &nbsp H<sup>+</sup> </th>
+	<th> + &nbsp OCl<sup>&#8722</sup></th>
+
+	</tr>
+	
+<tr>	
+    <td><strong>I</strong></td>
+    <td>0.10 M</td>
+    <td style="text-align:center">0</td>
+	<td>0</td>
+
+  </tr>
+  <tr>
+    <td><strong>C</strong></td>
+    <td>-x</td>
+    <td style="text-align:center">+x</td>
+	<td>+x</td>
+  </tr>
+  
+    </tr>
+  <tr>
+    <td><strong>E</strong></td>
+    <td>0.10 &#8722 x</td>
+    <td style="text-align:center">+ &nbsp x</td>
+	<td>+ &nbsp x</td>
+  </tr>
+	</table><br>
+<p>The equilibrium expression is:</p>	
+<div class="frac"><div class="maineq">K = </div><span class="Fraction"><span class="Numerator">[H<sup>+</sup>][OCl<sup>&#8722</sup>]</span>
+<span class="Denominator">[HOCl]</span></span>=<span class="Fraction"><span class="Numerator">(x)(x)</span>
+<span class="Denominator">(0.10 &#8722 x)</span></span></div>
+<div class="frac"><div class="maineq">3.5 x 10<sup>&#8722 8</sup> = </div><span class="Fraction"><span class="Numerator">x<sup>2</sup></span>
+<span class="Denominator">(0.10 &#8722 x)</span></span></div><br>
+<p>There is a technique for solving the value of x easily in chemical equilibrium, if the condition is:</p>
+<div class="frac"><div class="maineq">if</div><span class="Fraction"><span class="Numerator">[initial]</span>
+<span class="Denominator">K</span></span> &gt 100, then +x or &#8722x can be neglected from the expression, else perform quadratic equation to 
+solve for x. </div>
+<p>This condition states that if the ratio of inital concentration to the equilibrium constant is greater than 100, then you can neglect the terms + x or
+&#8722x in the equilibrium expression so that it can be easier to solve for x. If it is otherwise, perform the usual algebraic operation to solve for x.
+In this example, the expression is simplified:</p>
+<div class="frac"><span class="Fraction"><span class="Numerator">0.10</span>
+<span class="Denominator">3.5 x 10<sup>&#8722 8</sup></span></span> &gt 100, therefore &#8722x is negligible to solve for x</div><br>
+
+<div class="frac"><div class="maineq">3.5 x 10<sup>&#8722 8</sup> = </div><span class="Fraction"><span class="Numerator">x<sup>2</sup></span>
+<span class="Denominator">(0.10)</span></span></div><br>
+
+<p class="equation">x &nbsp = &nbsp &#8730(3.5 x 10<sup>&#8722 8</sup>)(0.10) = 5.92 x 10<sup>&#8722 5</sup></p>
+<p>Thus, [OCl<sup>&#8722</sup>] =<span style="color:blue"><strong>5.92 x 10<sup>&#8722 5</sup> M</strong></span></p>
+</div><br>
+</ol>
+</div></div>
+
+<div class="container">
+  <p> Outline of Topics for this Page:  <a href="#ionproduct">Ion Product of Water</a> |<a href="#acid">Acid-Base Equilibria</a>| <a href="#solving">General Chemistry Problem Solving</a> |
+</p>
+<p class="aligncenter">
+<button onclick="window.location.href='/genchem3.html';">Back to Previous Lesson </button>
+<button onclick="window.location.href='/gchmexam.html';">Take the General Chemistry Practice Exam</button> </p>
+</div>
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p class="footer" style="font-size:12px">Copyright&#169 2020 Bryan's SciTutor &#9830 Terms of Use-Privacy Policy</p>
+</div>
+<script>
+
+</script>
+</body>
+</html>

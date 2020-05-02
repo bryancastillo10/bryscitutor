@@ -1,0 +1,151 @@
+
+<html>
+<head>
+  <title>Bryan's SciTutor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style type="text/css">
+		.jumbotron {background-image:url(bluebg.jpg);}
+		.{background-image:url(bluebg.jpg);}
+		.container{background-color:none}
+		p {text-align:justify;}
+		h2 {text-align:center; font-style:italic}
+		.footer{text-align:center; color:yellow;
+   </style>
+ <style type="text/css">
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* relevant styles */
+.img__wrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+
+.img__description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+   opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+</style>	
+</head>
+</head>
+<body>
+
+<div class="jumbotron" style="margin-bottom:0">
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">SciTutor</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="biosection.html">Biology Section</a></li>
+        <li><a href="chemsection.html">Chemistry Section</a></li>
+		<li><a href="physection.html">Physics Section</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <div class="container">
+  <h2>Welcome to the Biology Section. Please select a topic:</h2>
+
+<div class="gallery">
+  <a target="" href="cellbio.jpg">
+    <img src="cellbio.jpg" title="Learn more about the fundamentals of biology such as parts and functions of the cell,
+cell to cell interactions, the metabolic pathway, and	etc..."  width="600" height="400">
+  </a>
+  <div class="desc">Cell Biology</div>
+</div>
+
+<div class="gallery">
+  <a target="" href="genetics.jpeg">
+    <img src="genetics.jpeg" title="Learn more about the fundamentals of genetics such as Mendelian genetics,chromosomes,mutations,
+	and other principles regarding genetics."/>
+  <div class="desc">Genetics</div>
+</div>
+
+<div class="gallery">
+  <a target="" href="physio.jpg">
+    <img src="physio.jpg" title="Learn the different mechanisms and metabolic pathways of body organs and system, and some medical 
+	approaches."width="600" height="400">
+  </a>
+  <div class="desc">Physiology</div>
+</div>
+
+<div class="gallery">
+  <a target="" href="microbio.jpg">
+    <img src="microbio.jpg" title="Learn the characteristics and functions of different microorganisms such as bacteria, fungi, viruses, and etc..." width="600" height="400">
+  </a>
+  <div class="desc">Microbiology</div>
+</div>
+
+<div class="gallery">
+  <a target="" href="genebiotech.jpg">
+    <img src="genebiotech.jpg"  title="Learn more about the techniques and engineering principles of molecular biology."width="600" height="400">
+  </a>
+  <div class="desc">Gene Biotechnology</div>
+</div>
+<div class="gallery">
+  <a target="" href="biochem.png">
+    <img src="biochem.png" title="Learn more on the chemistry of different biomolecules such as protein, nucleic acids, carbohydrates, and lipids." width="600" height="400">
+  </a>
+  <div class="desc">Biochemistry</div>
+</div> 
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p class="footer" style="font-size:12px">Copyright&#169 2020 Bryan's SciTutor &#9830 Terms of Use-Privacy Policy</p>
+</div>
+</body>
+</html>
